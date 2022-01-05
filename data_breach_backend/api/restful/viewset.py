@@ -26,7 +26,7 @@ def paginating_queryset(self, queryset, request):
 
 class DataBreachUploadViewset(viewsets.ModelViewSet):
     """
-        DataBreachUploadViewset
+        DataBreachUploadViewset performs all CRUD Operations.
     """
     queryset = DataBreach.objects.all().order_by('name')
     serializer_class = DataBreachUploadSerializer
