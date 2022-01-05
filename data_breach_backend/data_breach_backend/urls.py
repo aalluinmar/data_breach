@@ -14,10 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import include, re_path
-from rest_framework.documentation import include_docs_urls
 from rest_framework_nested import routers
+from api.restful.viewset import DataBreachUploadViewset
+from rest_framework.documentation import include_docs_urls
 
-from api.restful.viewset import (UserDataViewSet)
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()

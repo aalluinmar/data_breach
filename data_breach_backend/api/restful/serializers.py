@@ -17,4 +17,4 @@ class DataBreachUploadSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = DataBreach
-        exclude = ('audit_status',)
+        fields = '__all__'
