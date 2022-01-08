@@ -21,7 +21,7 @@ from rest_framework.documentation import include_docs_urls
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
-router.register(r'userslist', DataBreachUploadViewset)
+router.register(r'databreach', DataBreachUploadViewset)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

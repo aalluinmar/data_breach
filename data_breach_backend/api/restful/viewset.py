@@ -1,6 +1,7 @@
 import json
 import logging
 
+from django.db.models import Count
 from rest_framework import viewsets, serializers
 from django.core.serializers.json import DjangoJSONEncoder
 
@@ -28,5 +29,13 @@ class DataBreachUploadViewset(viewsets.ModelViewSet):
     """
         DataBreachUploadViewset performs all CRUD Operations.
     """
-    queryset = DataBreach.objects.all().order_by('name')
+    queryset = DataBreach.objects.all()
     serializer_class = DataBreachUploadSerializer
+
+
+class BarDataViewset(viewsets.ModelViewSet):
+    queryset = DataBreach.objects.all()
+    # serializer_class = ProductReviewsSerializer
+    def list(self, request):
+        query = self.queryset.values('state').annotate(count=Count('individuals_affected', distinct=True))
+        return query

@@ -1,4 +1,4 @@
-# This dockerfile is used to build product_reviews_backend
+# This dockerfile is used to build data_breach_backend
 
 ARG BUILD_DATE
 ARG VCS_REF
